@@ -1,0 +1,12 @@
+# IntelliJ IDEA
+.idea/
+
+# Build folders
+target/
+
+# Maven wrapper logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
