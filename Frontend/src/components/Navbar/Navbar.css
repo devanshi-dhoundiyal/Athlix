@@ -1,0 +1,363 @@
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: var(--transition);
+  padding: 18px 0;
+}
+
+.navbar-scrolled {
+  background: rgba(248, 255, 253, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.navbar-container {
+  width: 90%;
+  max-width: var(--container-width);
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+
+    text-decoration: none;
+
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+.logo-icon{
+
+width:46px;
+height:46px;
+
+border-radius:50%;
+
+background:#16A085;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+color:white;
+
+flex-shrink:0;
+
+box-shadow:0 6px 18px rgba(22,160,133,.18);
+}
+
+.logo-text{
+
+font-family:"Poppins",sans-serif;
+
+font-size:2rem;
+
+font-weight:700;
+
+letter-spacing:-0.8px;
+
+color:#1E293B;
+
+line-height:1;
+
+}
+/* ===========================
+   DESKTOP NAVIGATION
+=========================== */
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-link {
+  position: relative;
+
+  border: none;
+  background: transparent;
+
+  color: var(--text-light);
+
+  font-size: .96rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  padding: 10px 12px;
+
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+/* underline animation */
+
+.nav-link::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 12px;
+  bottom: 4px;
+
+  width: 0;
+
+  height: 3px;
+
+  border-radius: 20px;
+
+  background: var(--primary);
+
+  transition: .35s;
+}
+
+.nav-link:hover::after {
+  width: calc(100% - 24px);
+}
+
+.nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link.active::after {
+  width: calc(100% - 24px);
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.desktop-buttons {
+  display: flex;
+  gap: 14px;
+}
+
+.login-btn {
+
+  padding: 12px 24px;
+
+  border-radius: 40px;
+
+  border: 2px solid var(--primary);
+
+  background: #16a084;
+
+  color: white;
+
+  font-weight: 600;
+
+  transition: var(--transition);
+}
+
+.login-btn:hover {
+
+  background: var(--primary);
+
+  color: #0c0c0c;
+
+}
+
+.start-btn {
+
+  padding: 12px 28px;
+
+  border-radius: 40px;
+
+  border: 2px solid var(--primary);
+
+  background: #16A085;
+
+  color: white;
+
+  font-weight: 600;
+
+  transition: var(--transition);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.start-btn:hover {
+
+  background: var(--primary);
+
+  color: #0c0c0c;
+}
+
+/* ===========================
+   MOBILE BUTTON
+=========================== */
+
+.mobile-menu-btn {
+
+  display: none;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--text);
+
+  cursor: pointer;
+
+}
+
+/* ===========================
+   MOBILE MENU
+=========================== */
+
+.mobile-menu {
+
+  position: absolute;
+
+  top: 85px;
+
+  left: 5%;
+
+  width: 90%;
+
+  background: white;
+
+  border-radius: 20px;
+
+  box-shadow: var(--shadow-md);
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 25px;
+
+  gap: 18px;
+
+}
+
+.mobile-link {
+
+  text-align: left;
+
+  color: var(--text);
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  transition: var(--transition);
+}
+
+.mobile-link:hover {
+  color: var(--primary);
+}
+
+.mobile-login,
+.mobile-start {
+
+  padding: 14px;
+
+  border-radius: 40px;
+
+  font-weight: 600;
+}
+
+.mobile-login {
+
+  border: 2px solid var(--primary);
+
+  color: var(--primary);
+
+  background: white;
+}
+
+.mobile-start {
+
+  background: var(--primary);
+
+  color: white;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 1024px) {
+
+  .desktop-nav,
+  .desktop-buttons {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width:768px){
+
+.logo-text{
+font-size:1.3rem;
+}
+
+.logo-icon{
+
+width:42px;
+height:42px;
+
+font-size:18px;
+
+}
+
+.navbar{
+
+padding:14px 0;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.navbar-container{
+
+width:92%;
+
+}
+
+.mobile-menu{
+
+left:4%;
+
+width:92%;
+
+}
+
+}
+
