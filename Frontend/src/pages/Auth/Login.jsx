@@ -26,13 +26,15 @@ export default function Login() {
     setErrors({});
     setLoading(true);
     try {
-      // await authService.login(form.email, form.password, remember);
-      navigate('/dashboard');
-    } catch (err) {
-      setErrors({ api: 'Invalid email or password.' });
-    } finally {
-      setLoading(false);
-    }
+  // await authService.login(form.email, form.password, remember);
+
+  navigate('/child-profile');
+
+} catch (err) {
+  setErrors({ api: 'Invalid email or password.' });
+} finally {
+  setLoading(false);
+}
   };
 
   const change = (field) => (ev) => {
