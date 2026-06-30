@@ -117,10 +117,32 @@ export default function ChildProfile() {
     }
     setLoading(true);
     try {
-      // await childProfileService.create({ name, age, gender, disabilities, ... });
-      showToast('Profile saved! Taking you to the assessment…');
-      setTimeout(() => navigate('/assessment'), 1400);
-    } catch {
+
+  const childProfile = {
+    photoUrl,
+    name,
+    age,
+    gender,
+    disabilities,
+    height,
+    weight,
+    medNotes,
+    interests,
+    expLevel,
+    prevSports,
+    expStory,
+  };
+
+  localStorage.setItem(
+    "childProfile",
+    JSON.stringify(childProfile)
+  );
+
+  showToast("Profile saved! Taking you to the assessment…");
+
+  setTimeout(() => navigate("/assessment"), 1400);
+
+} catch {
       showToast('Something went wrong. Please try again.');
     } finally {
       setLoading(false);
